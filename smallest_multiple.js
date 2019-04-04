@@ -13,17 +13,18 @@ module.exports = function(ceiling) {
   // if not 0 then i++
   function checkI(i) {
     for (let j = 1; j <= ceiling; j++) {
-      // loop 20 % i   where i goes from 1 to 20  must % = 0
+      // loop ceiling % i   where i goes from 1 to 20  must % = 0
       if (i % j !== 0) {
         return false;
       }
     }
     return true;
   }
-  // break loop when ceiling all are 0
+  // break loop when i% numbers through ceiling are 0
   while (!checkI(i)) {
     checkI(i);
     i += ceiling;
   }
+  // add ceiling to I until all numbers through ceiling can divide evenly
   return i;
 };
