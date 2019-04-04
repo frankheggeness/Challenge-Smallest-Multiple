@@ -6,9 +6,24 @@
  * @return { Number }         Lowest Positive Number that is evenly divisible by all numbers
  *                            between 1 and `ceiling`
  */
-module.exports = function( ceiling ) {
+module.exports = function(ceiling) {
   // do work here
+  let output = ceiling;
 
-
-  return 0;
+  // if not 0 then i++
+  function checkOutput(i) {
+    for (let j = 1; j <= ceiling; j++) {
+      // loop ceiling % i   where i goes from 1 to 20  must % = 0
+      if (output % j !== 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+  // break loop when i% numbers through ceiling are 0
+  while (!checkOutput(output)) {
+    output += ceiling;
+  }
+  // add ceiling to I until all numbers through ceiling can divide evenly
+  return output;
 };
