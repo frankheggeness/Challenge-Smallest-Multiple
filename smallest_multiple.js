@@ -8,23 +8,22 @@
  */
 module.exports = function(ceiling) {
   // do work here
-  let i = ceiling;
+  let output = ceiling;
 
   // if not 0 then i++
-  function checkI(i) {
+  function checkOutput(i) {
     for (let j = 1; j <= ceiling; j++) {
       // loop ceiling % i   where i goes from 1 to 20  must % = 0
-      if (i % j !== 0) {
+      if (output % j !== 0) {
         return false;
       }
     }
     return true;
   }
   // break loop when i% numbers through ceiling are 0
-  while (!checkI(i)) {
-    checkI(i);
-    i += ceiling;
+  while (!checkOutput(output)) {
+    output += ceiling;
   }
   // add ceiling to I until all numbers through ceiling can divide evenly
-  return i;
+  return output;
 };
